@@ -107,50 +107,50 @@ export default function Carousel() {
       })}
 
       <button
-  type="button"
-  onClick={() => handleMove(-1)}
-  className="absolute -left-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
-  aria-label="Previous image"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={1.5}
-    stroke="currentColor"
-    className="h-6 w-6"
-    aria-hidden="true"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M15.75 19.5 8.25 12l7.5-7.5"
-    />
-  </svg>
-</button>
+        type="button"
+        onClick={() => handleMove(-1)}
+        className="absolute -left-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
+        aria-label="Previous image"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="h-6 w-6"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </svg>
+      </button>
 
-<button
-  type="button"
-  onClick={() => handleMove(1)}
-  className="absolute -right-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
-  aria-label="Next image"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={1.5}
-    stroke="currentColor"
-    className="h-6 w-6"
-    aria-hidden="true"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="m8.25 4.5 7.5 7.5-7.5 7.5"
-    />
-  </svg>
-</button>
+      <button
+        type="button"
+        onClick={() => handleMove(1)}
+        className="absolute -right-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
+        aria-label="Next image"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="h-6 w-6"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </button>
     </div>
   );
 }
