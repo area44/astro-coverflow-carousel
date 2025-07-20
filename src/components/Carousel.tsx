@@ -1,7 +1,5 @@
-// https://gist.github.com/mackenziechild/035fc7c96d648b4eada1f5d9ba4eb2dc#file-carousel-js
-
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const IMAGES_DATA = [
   {
@@ -31,14 +29,14 @@ export default function Carousel() {
     if (direction > 0) {
       const firstItem = imgArrCopy.shift();
       if (!firstItem) return;
-      imgArrCopy.push({ ...firstItem, id: Math.random() });
-      setImages(imgArrCopy);
+      imgArrCopy.push(firstItem);
     } else {
       const lastItem = imgArrCopy.pop();
-      imgArrCopy.unshift({ ...lastItem, id: Math.random() });
-      setImages(imgArrCopy);
+      if (!lastItem) return;
+      imgArrCopy.unshift(lastItem);
     }
-    console.log("images", images);
+
+    setImages(imgArrCopy);
   };
 
   const variants = {
@@ -74,33 +72,26 @@ export default function Carousel() {
     }),
   };
 
+  const getLevel = (pos: number) => {
+    if (pos === 0) return "active";
+    if (Math.abs(pos) === 1) return "level1";
+    if (Math.abs(pos) === 2) return "level2";
+    if (Math.abs(pos) === 3) return "level3";
+    return "level4";
+  };
+
   return (
     <div className="relative mx-auto flex h-96 w-[90%] items-center justify-center">
       {images.map((image, i) => {
-        let position = 0;
-
-        if (images.length % 2) {
-          position = i - (images.length + 1) / 2;
-        } else {
-          position = i - images.length / 2;
-        }
-
-        let imgLevel =
-          position === 0
-            ? "active"
-            : position === -1 || position === 1
-              ? "level1"
-              : position === -2 || position === 2
-                ? "level2"
-                : position === -3 || position === 3
-                  ? "level3"
-                  : "level4";
+        const centerIndex = Math.floor(images.length / 2);
+        const position = i - centerIndex;
+        const imgLevel = getLevel(position);
 
         return (
           <motion.div
             key={image.id}
             initial={false}
-            className={`absolute left-1/2 aspect-[3/2] h-60 flex-none overflow-hidden rounded-3xl border border-neutral-200 shadow-md dark:border-neutral-700`}
+            className="absolute left-1/2 aspect-[3/2] h-60 flex-none overflow-hidden rounded-3xl border border-neutral-200 shadow-md dark:border-neutral-700"
             animate={imgLevel}
             custom={position}
             variants={variants}
@@ -109,49 +100,57 @@ export default function Carousel() {
             <img
               src={image.src}
               className="h-full w-full object-cover"
-              alt={`Carousel image ${i + 1}`}
+              alt={`Pic ${i + 1}`}
             />
           </motion.div>
         );
       })}
+
       <button
-        onClick={() => handleMove(-1)}
-        className="absolute -left-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="h-6 w-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M15.75 19.5 8.25 12l7.5-7.5"
-          />
-        </svg>
-      </button>
-      <button
-        onClick={() => handleMove(1)}
-        className="absolute -right-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="h-6 w-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m8.25 4.5 7.5 7.5-7.5 7.5"
-          />
-        </svg>
-      </button>
+  type="button"
+  onClick={() => handleMove(-1)}
+  className="absolute -left-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
+  aria-label="Previous image"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="h-6 w-6"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15.75 19.5 8.25 12l7.5-7.5"
+    />
+  </svg>
+</button>
+
+<button
+  type="button"
+  onClick={() => handleMove(1)}
+  className="absolute -right-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
+  aria-label="Next image"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="h-6 w-6"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+    />
+  </svg>
+</button>
     </div>
   );
 }
