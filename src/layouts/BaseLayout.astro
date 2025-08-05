@@ -4,19 +4,31 @@ import Header from "@/components/Header.astro";
 import HeadSEO from "@/components/HeadSEO.astro";
 
 interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
-  ogImage?: URL | undefined;
+  title?: string;
+  description?: string;
+  ogImage?: URL;
+  bodyClass?: string;
 }
 
-const { title, description, ogImage } = Astro.props;
+const fallbackTitle = "My Astro Site";
+const fallbackDescription = "A modern web experience built with Astro.";
+
+const {
+  title = fallbackTitle,
+  description = fallbackDescription,
+  ogImage,
+  bodyClass = "",
+} = Astro.props;
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
     <HeadSEO title={title} description={description} ogImage={ogImage} />
   </head>
-  <body class="bg-background min-h-screen font-sans antialiased">
+  <body
+    class={`bg-background text-foreground min-h-screen font-sans antialiased ${bodyClass}`}
+  >
     <div class="relative flex min-h-screen flex-col">
       <Header />
       <main class="flex-auto">

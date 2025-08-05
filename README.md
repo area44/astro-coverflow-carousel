@@ -1,5 +1,7 @@
 # Astro Coverflow Carousel
 
+A sleek and responsive **coverflow-style image carousel** built with [Astro](https://astro.build/), [React](https://reactjs.org/), [Framer Motion](https://www.framer.com/motion/), and [Tailwind CSS](https://tailwindcss.com/).
+
 ## Getting Started
 
 To get started with this application, make sure you have Node.js v20+ installed on your system. Then, follow these steps:

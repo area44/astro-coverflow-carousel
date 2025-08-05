@@ -4,18 +4,17 @@ import { buttonVariants } from "@/components/ui/button";
 ---
 
 <header
+  role="banner"
   class="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur"
 >
-  <div
-    class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0"
-  >
+  <div class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
     <div class="flex flex-1 items-center justify-end space-x-4">
-      <nav class="flex items-center space-x-1">
+      <nav class="flex items-center space-x-1" aria-label="Primary navigation">
         <a
           href="https://github.com/AREA44/astro-coverflow-carousel"
           target="_blank"
           rel="noreferrer"
-          class={buttonVariants({ variant: 'ghost' })}
+          class={buttonVariants({ variant: "ghost" })}
         >
           GitHub
         </a>

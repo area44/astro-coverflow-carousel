@@ -109,7 +109,7 @@ export default function Carousel() {
       <button
         type="button"
         onClick={() => handleMove(-1)}
-        className="absolute -left-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
+        className="absolute -left-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-accent-foreground"
         aria-label="Previous image"
       >
         <svg
@@ -132,7 +132,7 @@ export default function Carousel() {
       <button
         type="button"
         onClick={() => handleMove(1)}
-        className="absolute -right-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
+        className="absolute -right-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-accent-foreground"
         aria-label="Next image"
       >
         <svg
