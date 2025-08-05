@@ -1,7 +1,7 @@
 {
   "name": "@area44/astro-coverflow-carousel",
-  "version": "25.01.27",
-  "description": "An Astro template for building apps.",
+  "version": "25.08.05",
+  "description": "A responsive, animated coverflow carousel built with Astro, Framer Motion, and Tailwind CSS.",
   "author": {
     "name": "AREA44"
   },

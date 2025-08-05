@@ -5,7 +5,20 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Astro Coverflow Carousel"
-  description="This is a Coverflow Carousel"
+  description="A responsive, animated coverflow carousel built with Astro, Framer Motion, and Tailwind CSS."
 >
-  <Carousel client:load />
+  <section class="py-12">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-3xl font-bold tracking-tight lg:text-5xl">
+        Astro Coverflow Carousel
+      </h1>
+      <p class="mt-4 max-w-xl mx-auto text-muted-foreground text-base leading-relaxed">
+        Swipe through images in a sleek coverflow interface using Framer Motion animations.
+      </p>
+    </div>
+
+    <div class="mt-12">
+      <Carousel client:load />
+    </div>
+  </section>
 </BaseLayout>
