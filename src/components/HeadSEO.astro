@@ -1,6 +1,7 @@
 ---
 import "@/styles/global.css";
-import "@/styles/fonts.css";
+
+import { Font } from "astro:assets";
 
 interface Props {
   title?: string;
@@ -40,3 +41,5 @@ const faviconURL = new URL("favicon.svg", Astro.site).toString();
 <meta property="twitter:title" content={siteTitle} />
 <meta property="twitter:description" content={siteDescription} />
 <meta property="twitter:image" content={siteOgImage.toString()} />
+
+<Font cssVariable="--font-inter" preload />
