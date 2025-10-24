@@ -3,8 +3,8 @@ import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
-const site = process.env.SITE || "http://localhost:4321";
-const base = process.env.BASE || "/";
+const site = process.env.site || "http://localhost:4321";
+const base = process.env.base || "/";
 
 // https://astro.build/config
 export default defineConfig({
