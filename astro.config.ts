@@ -1,8 +1,8 @@
 // @ts-check
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
-import imagesClsOptimizer from 'unplugin-images-cls-optimizer/vite'
 import { defineConfig, fontProviders } from "astro/config";
+import imagesClsOptimizer from "unplugin-images-cls-optimizer/vite";
 
 const site = process.env.SITE || "http://localhost:4321";
 const base = process.env.BASE || "/";
