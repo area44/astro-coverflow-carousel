@@ -1,6 +1,7 @@
 // @ts-check
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
+import imagesClsOptimizer from 'unplugin-images-cls-optimizer/vite'
 import { defineConfig, fontProviders } from "astro/config";
 
 const site = process.env.SITE || "http://localhost:4321";
@@ -21,6 +22,6 @@ export default defineConfig({
     ],
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), imagesClsOptimizer()],
   },
 });
