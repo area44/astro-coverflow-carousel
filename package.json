@@ -37,7 +37,6 @@
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
-    "typescript": "^5.9.3",
-    "unplugin-images-cls-optimizer": "^0.0.2"
+    "typescript": "^5.9.3"
   }
 }
