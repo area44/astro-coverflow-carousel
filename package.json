@@ -1,7 +1,7 @@
 {
   "name": "@area44/astro-coverflow-carousel",
-  "version": "25.08.05",
-  "description": "A responsive, animated coverflow carousel built with Astro, Framer Motion, and Tailwind CSS.",
+  "version": "25.12.01",
+  "description": "A responsive, animated coverflow carousel built with Astro, Motion, and Tailwind CSS.",
   "author": {
     "name": "AREA44"
   },
@@ -11,9 +11,9 @@
     "dev": "astro dev",
     "preview": "astro preview",
     "start": "astro dev",
-    "format": "biome format --write .",
-    "lint": "biome lint --write .",
-    "check": "biome check --write ."
+    "format": "biome format --write",
+    "lint": "biome lint --write",
+    "check": "biome check --write"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",

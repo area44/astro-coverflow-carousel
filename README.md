@@ -1,6 +1,6 @@
 # Astro Coverflow Carousel
 
-A sleek and responsive **coverflow-style image carousel** built with [Astro](https://astro.build/), [React](https://reactjs.org/), [Framer Motion](https://www.framer.com/motion/), and [Tailwind CSS](https://tailwindcss.com/).
+A sleek and responsive **coverflow-style image carousel** built with [Astro](https://astro.build/), [React](https://reactjs.org/), [Motion](https://motion.dev/), and [Tailwind CSS](https://tailwindcss.com/).
 
 ## Getting Started
 
