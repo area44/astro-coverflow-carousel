@@ -91,7 +91,7 @@ export default function Carousel() {
           <motion.div
             key={image.id}
             initial={false}
-            className="absolute left-1/2 aspect-[3/2] h-60 flex-none overflow-hidden rounded-3xl border border-neutral-200 shadow-md dark:border-neutral-700"
+            className="absolute left-1/2 aspect-3/2 h-60 flex-none overflow-hidden rounded-3xl border border-neutral-200 shadow-md dark:border-neutral-700"
             animate={imgLevel}
             custom={position}
             variants={variants}
