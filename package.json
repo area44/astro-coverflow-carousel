@@ -1,6 +1,6 @@
 {
   "name": "@area44/astro-coverflow-carousel",
-  "version": "25.12.23",
+  "version": "25.12.27",
   "description": "A responsive, animated coverflow carousel built with Astro, Motion, and Tailwind CSS.",
   "author": {
     "name": "AREA44"
