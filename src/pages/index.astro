@@ -8,10 +8,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
   description="A responsive, animated coverflow carousel built with Astro, Motion, and Tailwind CSS."
 >
   <div class="flex flex-1 flex-col">
-    <section class="border-border/50 dark:border-border">
-      <div
-        class="3xl:fixed 3xl:max-w-[calc(var(--breakpoint-2xl)+2rem)] mx-auto w-full px-2"
-      >
+    <section class="border-grid">
+      <div class="container-wrapper">
         <div
           class="container flex flex-col items-center gap-2 py-8 text-center md:py-16 lg:py-20 xl:gap-4"
         >
@@ -29,9 +27,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </div>
       </div>
     </section>
-    <div
-      class="3xl:fixed:max-w-[calc(var(--breakpoint-2xl)+2rem)] mx-auto w-full px-2 section-soft flex-1 pb-6"
-    >
+    <div class="container-wrapper section-soft flex-1 pb-6">
       <div class="container overflow-hidden">
         <Carousel client:load />
       </div>
