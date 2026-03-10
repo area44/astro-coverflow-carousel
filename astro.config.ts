@@ -11,15 +11,13 @@ export default defineConfig({
   site,
   base,
   integrations: [react()],
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.google(),
-        name: "Inter",
-        cssVariable: "--font-inter",
-      },
-    ],
-  },
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Inter",
+      cssVariable: "--font-inter",
+    },
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
